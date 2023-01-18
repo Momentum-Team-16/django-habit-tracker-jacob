@@ -23,6 +23,8 @@ env = environ.Env(
 	RENDER=(bool, False),
 )
 
+environ.Env.read_env()
+
 ALLOWED_HOSTS = []
 
 # Quick-start development settings - unsuitable for production
@@ -93,8 +95,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # settings.py
 
 DATABASES = {
-		default: env.db()
-	}
+	'default': env.db(),
+}
 
 
 # Password validation

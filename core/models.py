@@ -22,8 +22,3 @@ class Record(models.Model):
 
     def __str__(self):
         return f"Record for {self.habit.name}"
-
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=['habits', 'finished_date'], name='unique_daily_record')
-        ]
