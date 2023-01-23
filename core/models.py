@@ -16,7 +16,7 @@ class Habit(models.Model):
         return f"{self.name}"
 
 class Record(models.Model):
-    habit = models.ForeignKey('Habit', on_delete=models.CASCADE, related_name='records')
+    habit = models.ForeignKey(Habit, on_delete=models.CASCADE, related_name='records')
     finished_date = models.DateField(blank=True, null=True)
     amount = models.PositiveIntegerField(null=True, blank=True)
 
